@@ -1,7 +1,11 @@
-let slideIndex = 5;
+let slideIndex = 0;
 const slides = document.getElementsByClassName("slide");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
+
+document.addEventListener("DOMContentLoaded", (e) => {
+    slides[0].style.display = "block"
+});
 
 leftArrow.addEventListener("click", fireSlideDecrease);
 rightArrow.addEventListener("click", fireSlideIncrease);
@@ -21,7 +25,7 @@ function fireSlideDecrease() {
 }
 
 function fireSlideIncrease() {
-  if (slideIndex < slides.length) {
+  if (slideIndex < slides.length-1) {
     slideIndex++;
     console.log(slideIndex);
     console.log(slides[slideIndex]);
