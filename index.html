@@ -1,17 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
-    <title>Project starter</title>
-</head>
-<body>
-    <h1>Project starter</h1>
-    <p class="attribution">Coded by<a href="http://ilieadrian.com">Ilie Adrian</a></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TheOdinProject - Image Carousel</title>
+  </head>
+  <body>
+    <h1>Image Carousel</h1>
+    <div class="carousel-contaniner">
+      <div class="slide" id="1">
+        <img src="images/chilli.jpg" alt="chilli image" />
+      </div>
+      <div class="slide" id="2">
+        <img src="images/fish.jpg" alt="fish" />
+      </div>
+      <div class="slide" id="3">
+        <img src="images/girl.jpg" alt="girl" />
+      </div>
+      <div class="slide" id="4">
+        <img src="images/hockey.jpg" alt="hockey" />
+      </div>
+      <div class="slide" id="5">
+        <img src="images/strawberries.jpg" alt="strawberries" />
+      </div>
+
+      <div id="left-arrow">
+        <p>&#10094;</p>
+      </div>
+      <div id="right-arrow">
+        <p>&#10095;</p>
+      </div>
+
+      <div class="dots-container">
+        <span class="dot" id="1"></span>
+        <span class="dot" id="2"></span>
+        <span class="dot" id="3"></span>
+        <span class="dot" id="4"></span>
+        <span class="dot" id="5"></span>
+      </div>
+    </div>
+
+    <p class="attribution">
+      Coded by<a href="http://ilieadrian.com">Ilie Adrian</a>
+    </p>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
