@@ -59,10 +59,10 @@ body {
   background: rgba(60, 60, 60, 0.4);
 }
 #left-arrow {
-  right: 0;
+  left: 0;
 }
 #right-arrow {
-  left: 0;
+  right: 0;
 }
 
 img {
@@ -71,7 +71,7 @@ img {
   display: block;
 }
 
-.dots-container {
+#dots-container {
   cursor: pointer;
   position: absolute;
   bottom: 5%;
