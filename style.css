@@ -92,6 +92,10 @@ img {
   border-radius: 50%;
   display: inline-block;
 }
+.dot.active {
+  background-color:white;
+  opacity: 0.5;
+}
 
 /* Footer */
 .attribution {

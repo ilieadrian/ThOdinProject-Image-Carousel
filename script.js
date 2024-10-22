@@ -1,6 +1,7 @@
 let slideIndex = 0;
 const slides = document.getElementsByClassName("slide");
 const dotsContainer = document.getElementById("dots-container");
+const dots = document.querySelectorAll(".dot");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
 
@@ -12,14 +13,9 @@ leftArrow.addEventListener("click", fireSlideDecrease);
 rightArrow.addEventListener("click", fireSlideIncrease);
 
 function fireSlideDecrease() {
-  console.log("now decreasing")
   if (slideIndex > 0) {
     slideIndex--;
-    console.log(slideIndex);
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
+    resetStyles()
     slides[slideIndex].style.display = "block";
   } else {
     return;
@@ -27,18 +23,20 @@ function fireSlideDecrease() {
 }
 
 function fireSlideIncrease() {
-  console.log("now increasing")
   if (slideIndex < slides.length-1) {
     slideIndex++;
-    console.log(slideIndex);
-    console.log(slides[slideIndex]);
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
+    resetStyles()
     slides[slideIndex].style.display = "block";
   } else {
     return;
+  }
+} 
+setInterval(fireSlideIncrease, 5000);
+
+function resetStyles(){
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    dots[i].classList.remove("active");
   }
 }
 
@@ -47,9 +45,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 dotsContainer.addEventListener("click", (e) => {
-    console.log(e.target.id);
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-    slides[e.target.id].style.display = "block"
-})
+  if (e.target.classList.contains("dot")) {
+    resetStyles(); 
+    slideIndex = e.target.id - 1; 
+    slides[slideIndex].style.display = "block"; 
+    e.target.classList.add("active"); 
+    return slideIndex;
+  }
+});
